@@ -7,20 +7,40 @@ inquirer
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?',
+      message: 'What is the name of your project?',
     },
     {
-      type: 'checkbox',
-      message: 'What languages do you know?',
-      name: 'stack',
-      choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
-    },
+        type: 'input',
+        message: 'How would you describe the project?',
+        name: 'stack',
+      },
     {
       type: 'list',
-      message: 'What is your preferred method of communication?',
-      name: 'contact',
-      choices: ['email', 'phone', 'telekinesis'],
+      message: 'Which license did you use?',
+      name: 'stack',
+      choices: ['The MIT License', 'The GPL License', 'Apache license', 'N/A'],
     },
+    {
+        type: 'input',
+        message: 'How did you install your app?',
+        name: 'stack',
+      },
+
+      {
+        type: 'input',
+        message: 'Enter your Github information',
+        name: 'Github',
+      },
+      {
+        type: 'input',
+        message: 'Enter your E-mail:',
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: 'What were your contributions?',
+        name: 'contribution',
+    }
   ])
   .then((data) => {
     console.log(data);
