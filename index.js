@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const {generateHTML} = require('./utils');
+const {generateMarkdown} = require('./utils');
 
 inquirer
   .prompt([
@@ -12,38 +12,38 @@ inquirer
     {
         type: 'input',
         message: 'How would you describe the project?',
-        name: 'stack',
+        name: 'description',
       },
     {
       type: 'list',
       message: 'Which license did you use?',
-      name: 'stack',
-      choices: ['The MIT License', 'The GPL License', 'Apache license', 'N/A'],
+      name: 'license',
+      choices: ['The MIT License', 'The GPL License', 'Apache license', 'Other'],
     },
     {
         type: 'input',
         message: 'How did you install your app?',
-        name: 'stack',
+        name: 'install',
       },
-
-      {
-        type: 'input',
-        message: 'Enter your Github information',
-        name: 'Github',
-      },
-      {
-        type: 'input',
-        message: 'Enter your E-mail:',
-        name: 'email',
-    },
     {
         type: 'input',
         message: 'What were your contributions?',
         name: 'contribution',
-    }
+    },
+      {
+        type: 'input',
+        message: 'Enter your Github username:',
+        name: 'Github',
+      },
+    {
+        type: 'input',
+        message: 'Enter your email address:',
+        name: 'email',
+    },
   ])
   .then((data) => {
-    console.log(data);
+    generateMarkdown(data);
+    //console.log(data);
     // const filename = `${data.name.toLowerCase().split(' ').join('')}.md`;
 
     // fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
