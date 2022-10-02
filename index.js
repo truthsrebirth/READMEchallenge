@@ -42,13 +42,8 @@ inquirer
     },
   ])
   .then((data) => {
-    console.log(generateMarkdown(data));
-    //console.log(data);
-    // const filename = `${data.name.toLowerCase().split(' ').join('')}.md`;
-
-    // fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-    //   err ? console.log(err) : console.log('Success!')
-    // );
+    fs.writeFile('demo1.md', generateMarkdown(data), (err) =>
+    err ? console.log(err) : console.log('Success!'))
   });
 
 
