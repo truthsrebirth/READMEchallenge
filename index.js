@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const {generateMarkdown} = require('./utils');
+const { generateMarkdown } = require('./utils');
 
 inquirer
   .prompt([
@@ -42,7 +42,7 @@ inquirer
     },
   ])
   .then((data) => {
-    generateMarkdown(data);
+    console.log(generateMarkdown(data));
     //console.log(data);
     // const filename = `${data.name.toLowerCase().split(' ').join('')}.md`;
 
@@ -50,4 +50,6 @@ inquirer
     //   err ? console.log(err) : console.log('Success!')
     // );
   });
+
+
 
