@@ -40,7 +40,7 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown ({name, description, license, install, contribution, Github, email})  { // includes what will show up on the readme file thats generated
+function generateMarkdown ({name, description, license, install, contribution, tests,  Github, email})  { // includes what will show up on the readme file thats generated
     return `# Title ${name} 
 
 ${renderLicenseSection(license)}
@@ -54,6 +54,7 @@ ${description}
 * [Installation](#installation)
 * [Usage Information](#usage)
 * [license](#license)
+* [Questions](#Github)(#email)
 
 
 ## Install
@@ -70,7 +71,9 @@ ${contribution}
 ## Tests
 
 ## Questions
-github.com/${Github}
+
+github.com${Github}
+
 Email:${email}`;
 };
 
@@ -78,5 +81,3 @@ Email:${email}`;
 module.exports = {
     generateMarkdown,
 };
-
-// ${renderLicenseSection(license)} will replace line 34 once complete
